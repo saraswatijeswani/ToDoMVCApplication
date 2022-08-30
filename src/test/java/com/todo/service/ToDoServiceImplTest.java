@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.when;
@@ -58,7 +59,7 @@ public class ToDoServiceImplTest extends ToDoMVCApplicationTest {
         ToDo toDo = new ToDo(666, "MUKESH", "Completed");
         boolean result = toDoService.deleteToDo(toDo.getToDoId());
         assertFalse(result);
-        verify(toDoService, times(1)).deleteToDo(any());
+        verify(toDoService, times(1)).deleteToDo(anyInt());
     }
 
 }

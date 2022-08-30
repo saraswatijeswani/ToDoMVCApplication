@@ -64,7 +64,7 @@ public class ToDoControllerTest extends ToDoMVCApplicationTest {
     @Test
     public void testDeleteToDo() throws Exception {
         ToDo toDo = new ToDo(666,"Mukesh","Completed");
-        Mockito.when(toDoController.deleteToDo(any())).thenReturn(new ResponseEntity<>(HttpStatus.OK));
+        Mockito.when(toDoController.deleteToDo(anyInt())).thenReturn(new ResponseEntity<>(HttpStatus.OK));
         toDoController.deleteToDo(toDo.getToDoId());
         verify(toDoController, times(1)).deleteToDo(toDo.getToDoId());
     }
